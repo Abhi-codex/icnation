@@ -1,0 +1,37 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-in-up {
+  opacity: 0; 
+  animation: fadeInUp 0.8s ease-out forwards; 
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  margin-top: 100px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  display: none; 
+}
+
+.nav-item {
+  position: relative; 
+}
+
+.nav-item:hover .tooltip {
+  display: inline-block; 
+}
