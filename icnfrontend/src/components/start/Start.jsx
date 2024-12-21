@@ -33,7 +33,7 @@ const FrontPage = () => {
             className="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-200"
             onClick={() =>
               window.open(
-                "https://wa.me/9990997837?text=Hi%2C%20I%20want%20to%20power%20up%20my%20business%20with%20ICN",
+                "https://wa.link/628yfz",
                 "_blank"
               )
             }
