@@ -19,7 +19,7 @@ const FrontPage = () => {
           <img
             src={Icon}
             alt="Logo"
-            className="w-20 h-20 sm:w-28 sm:h-28 md:w-1/3 md:h-1/3 object-cover"
+            className="w-32 h-32  object-cover"
           />
         </div>
 
