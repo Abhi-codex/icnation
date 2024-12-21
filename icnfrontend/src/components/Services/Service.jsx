@@ -3,18 +3,18 @@ import { StickyScroll } from '../container/Container';
 
 const content = [
   {
-    title: "Home Automation and Monitoring",
-    description: "We facilitate homeowners to initiate automated features for their household appliances. For example, you can set scheduled automations to turn on lights at a specific time, when you go out of the house - activate your system for real time monitoring, so on & so forth.",
+    title: "Web-Tech Design & Development",
+    description: "Custom Website Design & Development || E-Commerce Solutions || Mobile-Responsive Web Applications || SEO Optimization & Performance Enhancement. Digital Marketing Solutions: Social Media Marketing (SMM) || Search Engine Marketing (SEM) || Content Creation & Marketing || Email Marketing || Campaigns Analytics & Performance Tracking ",
     // content: "Additional content for the first card, visible in the sticky section."
   },
   {
-    title: "Industrial Consultancy",
-    description: "We handle mechatronics work in a more comprehensive sense, falling under the heading of industry 4.0, namely the Industrial Internet of things. Examples include home automation in homes, real-time and remote monitoring and analysis of machine tools in mechanical manufacturing companies, and so on. Services may include implementation or advising services.",
+    title: "Automation Solutions",
+    description: "Smart Home Automation for Modern and Convenient Living || Industrial IoT Automation to Streamline Operations and Boost Efficiency || Workflow and Process Automation for Enhanced Productivity and Accuracy || AI-Driven Automation Solutions to Optimize Decision-Making and Performance ",
     // content: "Additional content for the second card, visible in the sticky section."
   },
   {
-    title: "Private and Government Project Handling",
-    description: "Our team is proficient in managing both private and government projects. We ensure that projects are completed on time, within budget, and to the highest standards. Our expertise covers various sectors and industries.",
+    title: "Emerging Technology Consulting",
+    description: "Technology Strategy & Roadmap Development || Internet of Things (IoT) Solutions & Applications || Artificial Intelligence & Machine Learning Integration || Digital Transformation Advisory || Cloud Computing & Scalability Solutions || Industry 4.0 & Smart System Implementation                                                                                                                                                                                                                                                                                                                                                 ",
     // content: "Our team is proficient in managing both private and government projects. We ensure that projects are completed on time, within budget, and to the highest standards. Our expertise covers various sectors and industries."
   }
 ];

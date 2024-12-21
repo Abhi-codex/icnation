@@ -2,28 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Help = () => {
-  // State to store form data
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [status, setStatus] = useState(''); // To show the success or error message
+  const [status, setStatus] = useState('');
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
-
-    const feedbackData = {
-      email,
-      name,
-      phone,
-      feedback,
-    };
+    e.preventDefault();
+    const feedbackData = { email, name, phone, feedback };
 
     try {
-      const response = await axios.post('http://localhost:5000/feedback', feedbackData);
+      await axios.post('http://localhost:5000/feedback', feedbackData);
       setStatus('Feedback submitted successfully!');
-      // Optionally, clear form fields after submission
       setEmail('');
       setName('');
       setPhone('');
@@ -35,125 +26,113 @@ const Help = () => {
   };
 
   return (
-    <div className="flex flex-wrap mb-4">
-      <div className='w-full lg:w-1/2 p-8'>
-        <h2 className='mb-12 text-3xl font-extrabold leading-9 text-gray-900 border-b-2 border-gray-100'>
-          FAQs
-        </h2>
-        <ul className='flex flex-col items-start gap-8'>
-          <li className='w-full'>
-            <p className='text-lg font-medium leading-6 text-gray-900'>
-              What is a home automation?
-            </p>
-            <p className='mt-2 text-base leading-6 text-gray-500'>
-              Home automation refers to using technology to control and automate household systems and devices, such as lighting, heating, security, appliances, and entertainment systems. By integrating these devices into a central network or platform, users can control them remotely or set them to perform specific actions automatically, often through a smartphone app, voice commands, or a home automation hub.
-            </p>
-          </li>
-          <li className='w-full'>
-            <p className='text-lg font-medium leading-6 text-gray-900'>
-              Why do someone need home automation?
-            </p>
-            <p className='mt-2 text-base leading-6 text-gray-500'>
-              Home automation provides a way to simplify tasks, enhance security, and create a more comfortable and efficient living environment. For many, it offers an added layer of control over their home, making life safer, easier, and more enjoyable.
-            </p>
-          </li>
-          <li className='w-full'>
-            <p className='text-lg font-medium leading-6 text-gray-900'>
-              What is Smart Irrigation system?
-            </p>
-            <p className='mt-2 text-base leading-6 text-gray-500'>
-              A Smart Irrigation System is an automated watering system designed to optimize water usage for agriculture, gardens, and landscapes by using advanced technology and data-driven processes. This system uses real-time data from sensors, weather forecasts, and soil conditions to determine when, where, and how much water is needed for plants, making irrigation more efficient, eco-friendly, and cost-effective.
-            </p>
-          </li>
-        </ul>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4 py-8">
+      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Feedback Form Section */}
+        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">Feedback Form</h2>
+          <form onSubmit={handleSubmit} className="space-y-6 border border-gray-300 rounded-lg p-6 shadow-sm">
+            <div>
+              <label htmlFor="email" className="block text-gray-700 font-medium mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full rounded-lg border-gray-300 py-2 px-4 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
 
-      <div className="w-full lg:w-1/2 p-10">
-        <section className="h-auto w-full">
-          <form onSubmit={handleSubmit} className="container mx-auto shadow-lg border-solid cursor-pointer">
-            <div className="space-y-6 bg-slate-800 rounded-lg p-4">
-              <h2 className=' flex mb-2 text-3xl font-extrabold items-center justify-center text-white'>
-              Feedback Form
-              </h2>
-              <div className="items-center w-full p-4 space-y-4 text-gray-500">
-                <h2 className="max-w-sm mx-auto text-white">Email Id</h2>
-                <div className="max-w-sm mx-auto">
-                  <div className="relative">
-                    <input
-                      type="email"
-                      id="user-info-email"
-                      className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="w-full rounded-lg border-gray-300 py-2 px-4 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
 
-              <hr />
+            <div>
+              <label htmlFor="phone" className="block text-gray-700 font-medium mb-1">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                className="w-full rounded-lg border-gray-300 py-2 px-4 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                placeholder="Your Phone Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </div>
 
-              <div className="items-center w-full p-4 space-y-4 text-gray-500">
-                <h2 className="max-w-sm mx-auto text-white">Personal info</h2>
-                <div className="max-w-sm mx-auto space-y-5">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      id="user-info-name"
-                      className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                      placeholder="Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input
-                      type="tel"
-                      id="user-info-phone"
-                      className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                      placeholder="Phone number"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <label htmlFor="feedback" className="block text-gray-700 font-medium mb-1">
+                Feedback
+              </label>
+              <textarea
+                id="feedback"
+                className="w-full rounded-lg border-gray-300 py-2 px-4 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                placeholder="Your Feedback"
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                required
+              />
+            </div>
 
-              <hr />
-
-              <div className="items-center w-full p-8 space-y-4 text-gray-500">
-                <h2 className="max-w-sm mx-auto text-white">Feedback</h2>
-                <div className="w-full max-w-sm pl-2 mx-auto space-y-5">
-                  <div className="relative">
-                    <textarea
-                      id="user-info-feedback"
-                      className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                      placeholder="Feedback for us"
-                      value={feedback}
-                      onChange={(e) => setFeedback(e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <hr />
-
-              <div className="w-full px-4 pb-4 ml-auto">
-                <button
-                  type="submit"
-                  className="py-2 px-4 bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
-                >
-                  Send
-                </button>
-              </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="py-2 px-6 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              >
+                Submit
+              </button>
             </div>
           </form>
-          {/* Show status message */}
           {status && <p className="text-center text-lg text-gray-500 mt-4">{status}</p>}
+        </section>
+
+        {/* FAQs Section */}
+        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">FAQs</h2>
+          <ul className="space-y-6">
+            <li>
+              <p className="text-lg font-medium text-gray-900">What web design services do you offer?</p>
+              <p className="text-gray-600 mt-2">
+                      We provide custom website design, e-commerce development, SEO optimization, mobile-responsive web apps, and digital marketing solutions to help businesses thrive online.
+              </p>
+            </li>
+            <li>
+              <p className="text-lg font-medium text-gray-900">Can you help with digital marketing?</p>
+              <p className="text-gray-600 mt-2">
+                           Absolutely! We offer social media marketing, content creation, email campaigns, and search engine marketing to boost your online presence.
+              </p>
+            </li>
+            <li>
+              <p className="text-lg font-medium text-gray-900">What types of automation do you provide?</p>
+              <p className="text-gray-600 mt-2">
+              We specialize in smart home automation, industrial IoT automation, workflow automation, and AI-driven solutions for enhanced efficiency.  </p>
+            </li>
+            <li>
+              <p className="text-lg font-medium text-gray-900">Why is emerging technology consulting important?</p>
+              <p className="text-gray-600 mt-2">
+             
+It helps businesses stay competitive by leveraging the latest technologies to enhance operations, reduce costs, and drive innovation.
+
+ </p>
+            </li>
+          </ul>
         </section>
       </div>
     </div>

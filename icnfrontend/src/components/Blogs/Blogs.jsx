@@ -10,7 +10,7 @@ const Blogs = () => {
     title: '',
     description: '',
     author: '',
-    image: Icon, 
+    image: Icon,
   });
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -33,8 +33,6 @@ const Blogs = () => {
   const handleAddNewBlog = async () => {
     try {
       const { title, author, description } = newBlog;
-
-      
       const formData = new FormData();
       formData.append('title', title);
       formData.append('author', author);
@@ -43,23 +41,14 @@ const Blogs = () => {
         formData.append('image', selectedImage);
       }
 
-      
-      console.log('Title:', title);
-      console.log('Author:', author);
-      console.log('Description:', description);
-      console.log('Selected Image:', selectedImage);
-
-     
       const response = await axios.post('http://localhost:5000/blogs', formData, {
         headers: {
-          'Content-Type': 'multipart/form-data', 
+          'Content-Type': 'multipart/form-data',
         },
       });
 
-     
-      console.log('New blog added:', response.data);
       setShowModal(false);
-      setData((prevData) => [...prevData, response.data]); 
+      setData((prevData) => [...prevData, response.data]);
     } catch (error) {
       console.error('Error adding new blog:', error.response || error.message);
     }
@@ -69,7 +58,7 @@ const Blogs = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5000/blogs');
-        setData(response.data); 
+        setData(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -79,103 +68,45 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div className="flex flex-col p-8 min-h-screen bg-gray-800">
-      <h1 className="text-3xl font-extrabold leading-9 text-white sm:text-4xl sm:leading-10 mb-4">Blogs</h1>
-
-      <div className="flex flex-wrap gap-9">
+    <div className="flex flex-col items-center justify-center p-8 bg-[rgb(2,28,51)]">
+      <h1 className="text-4xl font-extrabold leading-tight text-white mb-12">Blogs</h1>
+  
+      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data.map((post) => (
           <div
             key={post._id}
-            className="m-2 overflow-hidden rounded-lg shadow-lg cursor-pointer h-90 w-60 md:w-80 border-2 border-gray-100 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:border-gray-400"
+            className="overflow-hidden rounded-lg shadow-lg bg-[rgba(2, 28, 51, 0.68)] border border-gray-600 hover:shadow-2xl transform hover:scale-105 transition duration-300"
           >
-            <Link to={`/blogs/${post._id}`} className="block w-full h-full">
+            <Link to={`/blogs/${post._id}`} className="block">
               <img
                 alt="blog"
                 src={`http://localhost:5000${post.image}`}
-                className="object-cover w-full max-h-40 bg-white"
+                className="w-full h-40 object-cover"
               />
-              <div className="w-full p-4 bg-gray-800">
-                <p className="font-large text-indigo-500 text-md">Blog</p>
-                <p className="mb-2 text-xl font-medium text-white">{post.title}</p>
-                <p className="font-light text-gray-300 text-md">{post.description}</p>
-                <div className="flex items-center mt-4">
-                  <div className="relative block">
-                    <img alt="author" src={Icon} className="mx-auto object-cover rounded-full h-10 w-10" />
-                  </div>
-                  <div className="flex flex-col justify-between ml-4 text-sm">
-                    <p className="text-white">{post.author}</p>
-                    <p className="text-gray-300">{new Date(post.createdAt).toLocaleDateString()}</p>
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-white mb-2">{post.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{post.description}</p>
+                <div className="flex items-center">
+                  <img
+                    alt="author"
+                    src={Icon}
+                    className="w-10 h-10 rounded-full border border-gray-500"
+                  />
+                  <div className="ml-3">
+                    <p className="text-white font-medium text-sm">{post.author}</p>
+                    <p className="text-gray-400 text-xs">{new Date(post.createdAt).toLocaleDateString()}</p>
                   </div>
                 </div>
               </div>
             </Link>
           </div>
         ))}
-
       </div>
-      <div className="flex p-4 mx-auto mt-4 w-52">
-          <button
-            type="button"
-            onClick={handleOpenModal}
-            className="w-full px-4 py-2 text-base font-semibold rounded-lg text-center text-white transition duration-200 ease-in shadow-md bg-gradient-to-r from-green-600 to-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
-          >
-            Add Blog
-          </button>
-      </div>
-
-      {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full">
-            <h2 className="text-2xl font-bold mb-4">Add New Blog</h2>
-            <input
-              type="text"
-              name="title"
-              placeholder="Title"
-              value={newBlog.title}
-              onChange={handleInputChange}
-              className="w-full p-2 mb-3 border border-gray-300 rounded"
-            />
-            <input
-              type="text"
-              name="author"
-              placeholder="Author"
-              value={newBlog.author}
-              onChange={handleInputChange}
-              className="w-full p-2 mb-3 border border-gray-300 rounded"
-            />
-            <textarea
-              name="description"
-              placeholder="Description"
-              value={newBlog.description}
-              onChange={handleInputChange}
-              className="w-full p-2 mb-3 border border-gray-300 rounded"
-            />
-            <input
-              type="file"
-              onChange={handleImageChange}
-              className="w-full p-2 mb-3"
-            />
-            <div className="flex justify-between">
-              <button
-                type="button"
-                onClick={handleCloseModal}
-                className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                onClick={handleAddNewBlog}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg"
-              >
-                Add Blog
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
+  
+  
+ 
 };
 
-export default Blogs;
+export default Blogs;  

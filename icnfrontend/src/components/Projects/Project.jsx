@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../../assets/Icon.png';
 import './Project.css';
+import smartir from '../../assets/smartir.gif';
+import envi from '../../assets/environment.jpg';
+import monitor from '../../assets/monitor.png';
 
-const Project = () => {
+function Project() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -23,9 +26,40 @@ const Project = () => {
         'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
         'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
       ],
-      image: Icon
+      image: smartir
     },
-{
+    {
+      title: ' Environmental Monitoring',
+      description: `Real-time monitoring of environmental parameters (humidity, temperature, etc.) in a specific room, viewable remotely on web devices.`,
+      features: [
+        'Client: Elofic, Faridabad'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.',
+        'Proven Expertise: Trusted by clients like Elofic for reliable, scalable systems.'
+      ],
+      image: envi
+    },
+    {
+      title: ' Industrial Monitoring for Employers',
+      description: `Real-time, remote access to machine parameters via phone and personal computer, ensuring employers have simultaneous access to crucial data.`,
+      features: [
+        'RPM',
+        'Runtime',
+        'Ideal time',
+        'Data Analytics',
+        'Sustainable Practices'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.'
+      ],
+      image:  monitor
+    },
+    {
       title: 'Smart Irrigation System',
       description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
       features: [
@@ -40,9 +74,40 @@ const Project = () => {
         'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
         'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
       ],
-      image: Icon
+      image: smartir
     },
-{
+    {
+      title: ' Environmental Monitoring',
+      description: `Real-time monitoring of environmental parameters (humidity, temperature, etc.) in a specific room, viewable remotely on web devices.`,
+      features: [
+        'Client: Elofic, Faridabad'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.',
+        'Proven Expertise: Trusted by clients like Elofic for reliable, scalable systems.'
+      ],
+      image: envi
+    },
+    {
+      title: ' Industrial Monitoring for Employers',
+      description: `Real-time, remote access to machine parameters via phone and personal computer, ensuring employers have simultaneous access to crucial data.`,
+      features: [
+        'RPM',
+        'Runtime',
+        'Ideal time',
+        'Data Analytics',
+        'Sustainable Practices'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.'
+      ],
+      image:  monitor
+    },
+    {
       title: 'Smart Irrigation System',
       description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
       features: [
@@ -57,9 +122,40 @@ const Project = () => {
         'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
         'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
       ],
-      image: Icon
+      image: smartir
     },
-{
+    {
+      title: ' Environmental Monitoring',
+      description: `Real-time monitoring of environmental parameters (humidity, temperature, etc.) in a specific room, viewable remotely on web devices.`,
+      features: [
+        'Client: Elofic, Faridabad'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.',
+        'Proven Expertise: Trusted by clients like Elofic for reliable, scalable systems.'
+      ],
+      image: envi
+    },
+    {
+      title: ' Industrial Monitoring for Employers',
+      description: `Real-time, remote access to machine parameters via phone and personal computer, ensuring employers have simultaneous access to crucial data.`,
+      features: [
+        'RPM',
+        'Runtime',
+        'Ideal time',
+        'Data Analytics',
+        'Sustainable Practices'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.'
+      ],
+      image:  monitor
+    },
+    {
       title: 'Smart Irrigation System',
       description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
       features: [
@@ -74,76 +170,39 @@ const Project = () => {
         'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
         'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
       ],
-      image: Icon
+      image: smartir
     },
-{
-      title: 'Smart Irrigation System',
-      description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
+    {
+      title: ' Environmental Monitoring',
+      description: `Real-time monitoring of environmental parameters (humidity, temperature, etc.) in a specific room, viewable remotely on web devices.`,
       features: [
-        'Soil Moisture Sensors',
-        'Weather Integration',
-        'Remote Management',
+        'Client: Elofic, Faridabad'
+      ],
+      whyChooseUs: [
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.',
+        'Proven Expertise: Trusted by clients like Elofic for reliable, scalable systems.'
+      ],
+      image: envi
+    },
+    {
+      title: ' Industrial Monitoring for Employers',
+      description: `Real-time, remote access to machine parameters via phone and personal computer, ensuring employers have simultaneous access to crucial data.`,
+      features: [
+        'RPM',
+        'Runtime',
+        'Ideal time',
         'Data Analytics',
         'Sustainable Practices'
       ],
       whyChooseUs: [
-        'Expertise: Our team combines agricultural knowledge with technological expertise to deliver the best solutions for farmers.',
-        'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
-        'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
+        'Real-Time Accuracy: Monitor environmental parameters with precision.',
+        'Remote Access: Easily view data on web-enabled devices anytime, anywhere.',
+        'Custom Solutions: Tailored to meet your specific needs and requirements.'
       ],
-      image: Icon
+      image:  monitor
     },
-{
-      title: 'Smart Irrigation System',
-      description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
-      features: [
-        'Soil Moisture Sensors',
-        'Weather Integration',
-        'Remote Management',
-        'Data Analytics',
-        'Sustainable Practices'
-      ],
-      whyChooseUs: [
-        'Expertise: Our team combines agricultural knowledge with technological expertise to deliver the best solutions for farmers.',
-        'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
-        'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
-      ],
-      image: Icon
-    },
-{
-      title: 'Smart Irrigation System',
-      description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
-      features: [
-        'Soil Moisture Sensors',
-        'Weather Integration',
-        'Remote Management',
-        'Data Analytics',
-        'Sustainable Practices'
-      ],
-      whyChooseUs: [
-        'Expertise: Our team combines agricultural knowledge with technological expertise to deliver the best solutions for farmers.',
-        'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
-        'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
-      ],
-      image: Icon
-    },
-{
-      title: 'Smart Irrigation System',
-      description: `At ICN, we are dedicated to revolutionizing farming practices with our state-of-the-art Smart Irrigation Systems. As agriculture faces challenges like water scarcity, climate change, and the need for real-time insights on moisture levels, our solutions empower farmers to optimize water usage, enhance crop productivity, and promote sustainable practices.`,
-      features: [
-        'Soil Moisture Sensors',
-        'Weather Integration',
-        'Remote Management',
-        'Data Analytics',
-        'Sustainable Practices'
-      ],
-      whyChooseUs: [
-        'Expertise: Our team combines agricultural knowledge with technological expertise to deliver the best solutions for farmers.',
-        'Customized Solutions: We understand that every farm is unique. Our systems can be tailored to fit your specific needs.',
-        'Reliable Support: We offer ongoing support and maintenance to ensure your irrigation system runs smoothly.'
-      ],
-      image: Icon
-    },    
     // Other projects can be added here
   ];
 
@@ -151,15 +210,15 @@ const Project = () => {
     setSelectedProject(project);
     setIsOpen(true);
   };
-  
+
   const handleClose = () => {
     setIsOpen(false);
     setSelectedProject(null);
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 space-y-10">
-      <h1 className="text-3xl font-extrabold leading-9 text-black sm:text-4xl sm:leading-10">Projects</h1> 
+    <div className="min-h-screen flex flex-col items-center justify-center py-4 space-y-10">
+      <h1 className="text-3xl font-extrabold leading-9 text-black sm:text-4xl sm:leading-10">Projects</h1>
       <div className="carousel-wrapper relative overflow-hidden w-full max-w-screen-lg">
         <div className="carousel">
           {projects.map((project, index) => (
@@ -173,8 +232,7 @@ const Project = () => {
               <img
                 src={project.image}
                 alt="Project Thumbnail"
-                className="w-full h-48 object-cover"
-              />
+                className="w-full h-48 object-cover" />
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
                 <p className="text-gray-600">Click to see more details</p>
@@ -219,6 +277,6 @@ const Project = () => {
       </AnimatePresence>
     </div>
   );
-};
+}
 
 export default Project;

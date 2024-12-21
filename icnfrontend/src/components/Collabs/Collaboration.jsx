@@ -3,36 +3,53 @@ import Icon from '../../assets/Icon.png';
 import './Collaboration.css';
 
 const Collaboration = () => {
- 
-  const email = "abheytyagi010@gmail.com"; 
+  const email = "abheytyagi010@gmail.com";
 
   const handleCollabClick = () => {
     window.location.href = `mailto:${email}?subject=Collaboration Request&body=Hi, I would like to collaborate with you.`;
   };
 
   return (
-    <div>     
-      <section className="max-w-full px-4 py-12 mx-auto bg-gray-800 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold leading-9 text-white sm:text-4xl sm:leading-10">
-            Used by leading, innovative home builders and renovators.
-          </h2>
-          <p className="text-2xl font-extrabold mt-3 leading-7 text-white sm:mt-4">
-            Feel confident in choosing us.
+    <div className="bg-[rgb(2,28,51)] text-white">
+      {/* Hero Section */}
+      <section className="max-w-5xl mx-auto  py-12 text-center">
+        <h2 className="text-3xl font-bold sm:text-4xl">
+          Empowering Home Builders and Innovators
+        </h2>
+        <p className="mt-4 text-lg sm:text-xl text-gray-300">
+          Partner with us to revolutionize the way you build and renovate.
+        </p>
+      </section>
+
+      {/* Icon Section */}
+      <section className="max-w-4xl mx-auto px-6 py-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {[1, 2, 3].map((_, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center p-6  rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <img
+              src={Icon}
+              alt={`Icon ${index + 1}`}
+              className="w-27 h-27 sm:w-30 sm:h-30"
+            />
+           
+          </div>
+        ))}
+      </section>
+
+      {/* Call-to-Action Section */}
+      <section className="bg-[rgb(2,28,51)] py-8">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h3 className="text-2xl font-semibold">
+            Ready to Build the Future Together?
+          </h3>
+          <p className="mt-4 text-gray-300">
+            Join hands with us and create something extraordinary.
           </p>
-        </div>
-
-        <div className='collabs flex flex-row justify-center items-center'>
-          <img src={Icon} alt='Icon' className='w-52 h-52'/>
-          <img src={Icon} alt='Icon' className='w-52 h-52'/>
-          <img src={Icon} alt='Icon' className='w-52 h-52'/>
-        </div>
-
-        <div className="flex p-4 mx-auto mt-4 w-52">
-          <button 
-            type="button" 
-            onClick={handleCollabClick} 
-            className="w-full px-4 py-2 text-base font-semibold rounded-lg text-center text-white transition duration-200 ease-in shadow-md bg-gradient-to-r from-green-600 to-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          <button
+            onClick={handleCollabClick}
+            className="mt-6 px-6 py-3 text-lg font-semibold bg-green-600 rounded-lg shadow-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400"
           >
             Collab with us
           </button>

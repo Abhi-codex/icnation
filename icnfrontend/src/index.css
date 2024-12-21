@@ -17,3 +17,6 @@
 .carousel-button {
   @apply absolute top-1/2 transform -translate-y-1/2 z-10 bg-black text-white rounded-full p-2;
 }
+::-webkit-scrollbar{
+  display: none;
+}

@@ -1,82 +1,164 @@
-import React from 'react'
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => {
   return (
-    <div>
-        
-<footer className="flex flex-col justify-between px-3 py-8 duration-200 bg-gray-800 text-2 text-gray-200">
-    <div className="flex flex-col">
-        <div className="h-px mx-auto rounded-full md:hidden mt-7 w-11">
+    <footer className="bg-[rgb(2,28,51)] text-gray-400 py-16">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 px-6">
+        {/* About Section */}
+        <div>
+          <h2 className="text-white text-xl font-bold mb-4">About Us</h2>
+          <p className="text-sm leading-relaxed">
+            We are a passionate team dedicated to building innovative solutions
+            and providing exceptional services. Follow us for updates and inspiration.
+          </p>
         </div>
-        <div className="flex flex-col mt-4 md:mt-0 md:flex-row">
-            <nav className="flex flex-col items-center justify-center flex-1 border-gray-100 md:items-end md:border-r md:pr-5">
-                <a aria-current="page" href="#" className="hover:text-white">
-                    Components
-                </a>
-                <a aria-current="page" href="#" className="hover:text-white">
-                    Contacts
-                </a>
-                <a aria-current="page" href="#" className="hover:text-white">
-                    Customization
-                </a>
-            </nav>
-            <div className="h-px mx-auto mt-4 rounded-full md:hidden w-11">
-            </div>
-            <div className="flex items-center justify-center flex-1 mt-4 border-gray-100 md:mt-0 md:border-r">
-                <a className="hover:text-primary-gray-20" href="https://github.com/Charlie85270/tail-kit">
-                    <span className="sr-only">
-                        View on GitHub
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="text-xl transition-colors duration-200 hover:text-white" viewBox="0 0 1792 1792">
-                        <path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z">
-                        </path>
-                    </svg>
-                </a>
-                <a className="ml-4 hover:text-primary-gray-20" href="#">
-                    <span className="sr-only">
-                        Settings
-                    </span>
-                    <svg width="30" height="30" fill="currentColor" className="text-xl transition-colors duration-200 hover:text-white" viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M960 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm768 512q0-52-38-90t-90-38-90 38-38 90q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5zm0-1024q0-52-38-90t-90-38-90 38-38 90q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5zm-384 421v185q0 10-7 19.5t-16 10.5l-155 24q-11 35-32 76 34 48 90 115 7 11 7 20 0 12-7 19-23 30-82.5 89.5t-78.5 59.5q-11 0-21-7l-115-90q-37 19-77 31-11 108-23 155-7 24-30 24h-186q-11 0-20-7.5t-10-17.5l-23-153q-34-10-75-31l-118 89q-7 7-20 7-11 0-21-8-144-133-144-160 0-9 7-19 10-14 41-53t47-61q-23-44-35-82l-152-24q-10-1-17-9.5t-7-19.5v-185q0-10 7-19.5t16-10.5l155-24q11-35 32-76-34-48-90-115-7-11-7-20 0-12 7-20 22-30 82-89t79-59q11 0 21 7l115 90q34-18 77-32 11-108 23-154 7-24 30-24h186q11 0 20 7.5t10 17.5l23 153q34 10 75 31l118-89q8-7 20-7 11 0 21 8 144 133 144 160 0 8-7 19-12 16-42 54t-45 60q23 48 34 82l152 23q10 2 17 10.5t7 19.5zm640 533v140q0 16-149 31-12 27-30 52 51 113 51 138 0 4-4 7-122 71-124 71-8 0-46-47t-52-68q-20 2-30 2t-30-2q-14 21-52 68t-46 47q-2 0-124-71-4-3-4-7 0-25 51-138-18-25-30-52-149-15-149-31v-140q0-16 149-31 13-29 30-52-51-113-51-138 0-4 4-7 4-2 35-20t59-34 30-16q8 0 46 46.5t52 67.5q20-2 30-2t30 2q51-71 92-112l6-2q4 0 124 70 4 3 4 7 0 25-51 138 17 23 30 52 149 15 149 31zm0-1024v140q0 16-149 31-12 27-30 52 51 113 51 138 0 4-4 7-122 71-124 71-8 0-46-47t-52-68q-20 2-30 2t-30-2q-14 21-52 68t-46 47q-2 0-124-71-4-3-4-7 0-25 51-138-18-25-30-52-149-15-149-31v-140q0-16 149-31 13-29 30-52-51-113-51-138 0-4 4-7 4-2 35-20t59-34 30-16q8 0 46 46.5t52 67.5q20-2 30-2t30 2q51-71 92-112l6-2q4 0 124 70 4 3 4 7 0 25-51 138 17 23 30 52 149 15 149 31z">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-            <div className="h-px mx-auto mt-4 rounded-full md:hidden w-11 ">
-            </div>
-            <div className="flex flex-col items-center justify-center flex-1 mt-7 md:mt-0 md:items-start md:pl-5">
-                <span className="">
-                    © 2024
-                </span>
-                <span className="mt-7 md:mt-1">
-                    Created by
-                    <a className="underline hover:text-primary-gray-20" href="">
-                        Kartik Tyagi
-                    </a>
-                </span>
-                </div>
-                  </div>
-              </div>
-              <form className="flex flex-col md:flex-row w-full max-w-md mx-auto space-y-3 md:space-x-3 md:space-y-0 mt-12">
-  <div className="relative flex-1">
-    <input
-      type="text"
-      id="form-subscribe-Subscribe"
-      className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-      placeholder="Email"
-    />
-  </div>
-  <button
-    className="px-4 text-base font-semibold text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200"
-    type="submit"
-  >
-    Subscribe
-  </button>
-</form>
 
-</footer>
-    </div>
-  )
-}
+        {/* Quick Links */}
+        <div>
+          <h2 className="text-white text-xl font-bold mb-4">Quick Links</h2>
+          <ul className="space-y-3">
+            <li>
+              <ScrollLink
+                to="dashboard-section"
+                smooth={true}
+                duration={500}
+                className="hover:text-white transition cursor-pointer"
+              >
+                Home
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="services-section"
+                smooth={true}
+                duration={500}
+                className="hover:text-white transition cursor-pointer"
+              >
+                Services
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="about-section"
+                smooth={true}
+                duration={500}
+                className="hover:text-white transition cursor-pointer"
+              >
+                About Us
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="help-section"
+                smooth={true}
+                duration={500}
+                className="hover:text-white transition cursor-pointer"
+              >
+                Contact Us
+              </ScrollLink>
+            </li>
+          </ul>
+        </div>
 
-export default Footer
+        {/* Newsletter Section */}
+        <div>
+          <h2 className="text-white text-xl font-bold mb-4">Newsletter</h2>
+          <p className="text-sm leading-relaxed mb-6">
+            Subscribe to our newsletter for the latest updates and offers.
+          </p>
+          <form className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0">
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full md:flex-1 p-3 focus:ring-2 focus:ring-green-600 outline-none bg-[rgb(2,28,51)] text-gray-200"
+            />
+            <button
+              type="submit"
+              className="w-full md:w-auto px-6 py-3 bg-green-600 text-white hover:bg-green-700 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        {/* Social Media Links */}
+        <div>
+          <h2 className="text-white text-xl font-bold mb-4">Follow Us</h2>
+          <div className="flex space-x-5">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition"
+              aria-label="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="w-7 h-7"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.99 3.657 9.128 8.438 9.877v-6.987H7.897v-2.89h2.541v-2.205c0-2.507 1.492-3.89 3.777-3.89 1.093 0 2.238.194 2.238.194v2.46h-1.261c-1.242 0-1.625.775-1.625 1.563v1.879h2.762l-.441 2.89h-2.321V22C18.343 21.128 22 16.99 22 12z" />
+              </svg>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition"
+              aria-label="Twitter"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="w-7 h-7"
+                viewBox="0 0 24 24"
+              >
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition"
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="w-7 h-7"
+                viewBox="0 0 24 24"
+              >
+                <path d="M7 2C4.791 2 3 3.791 3 6v12c0 2.209 1.791 4 4 4h10c2.209 0 4-1.791 4-4V6c0-2.209-1.791-4-4-4H7zm10 2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10zM12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="w-7 h-7"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22.23 0H1.77C.79 0 0 .79 0 1.77v20.46C0 23.21.79 24 1.77 24h20.46c.98 0 1.77-.79 1.77-1.77V1.77C24 .79 23.21 0 22.23 0zM7.19 20.41H3.56v-9.3h3.63v9.3zM5.38 9.93c-1.16 0-2.09-.94-2.09-2.09s.93-2.09 2.09-2.09 2.09.94 2.09 2.09-.93 2.09-2.09 2.09zM20.41 20.41h-3.63v-5.5c0-1.31-.47-2.21-1.64-2.21-1.09 0-1.75.74-1.75 1.91v5.8h-3.63v-9.3h3.47v1.27h.05c.47-.89 1.62-1.78 3.27-1.78 2.4 0 4.32 1.59 4.32 5.01v4.8z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+        <span>© 2024 ICN. All Rights Reserved.</span>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

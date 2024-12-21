@@ -36,7 +36,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = ["var(--slate-900)", "var(--gray-800)", "var(--slate-900)"];
+  const backgroundColors = ["var(--slate-900)", "[rgb(2,28,51)]", "var(--slate-900)"];
 
   return (
     <motion.div
@@ -53,7 +53,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                transition={{ duration: 0, ease: "easeInOut" }}
                 className="text-4xl font-bold text-slate-100"
               >
                 {item.title}
@@ -61,7 +61,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                transition={{ duration: 0, ease: "easeInOut" }}
                 className="text-xl text-slate-300 mt-10 items-center"
               >
                 {item.description}
@@ -77,7 +77,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
           initial={{ opacity:0 }}
           animate={{opacity:1}}
           exit={{ opacity:0 }}
-          transition={{ duration: 0.8, ease: [0.42, 0, 0.58, 1] }}
+          transition={{ duration: 0, ease: [0.42, 0, 0.58, 1] }}
           style={{
             backgroundImage: backgroundImages[activeCard],
             backgroundSize: "cover",
