@@ -203,9 +203,9 @@ const groupedDataArray = Object.values(groupedData);
   // };
 
   const machineDetails = {
-    'Factory Name': ['ABC Manufacturing', 'XYZ Industries', 'LMN Factory'],
-    'Machine Location': ['Warehouse 12', 'Warehouse 9', 'Warehouse 5'],
-    'Technology': ['AI-Based Monitoring', 'IoT Sensors', 'Manual Monitoring'],
+    'Factory Name': ['farm 1', 'farm 2', 'farm 3'],
+    'Machine Location': ['part1', 'part2', 'part3'],
+    'Technology': ['rice ', 'wheat', 'sugarcane'],
     'Sensor': ['Temperature Sensor Model X', 'Pressure Sensor Model Y', 'Vibration Sensor Model Z'],
   };
 
@@ -267,7 +267,7 @@ const groupedDataArray = Object.values(groupedData);
             {/* {[{ label: 'Temperature', value: '72°C' }, { label: 'Humidity', value: '45%' }, { label: 'Condition', value: 'Running' }].map((item, index) => ( */}
               <div key={1} className="flex justify-between w-full flex-col">
               {/* {item.label} */}
-              <span className='text-lg'>Rpm :</span>
+              <span className='text-lg'>moisture :</span>
               <span className='text-6xl font-semibold'>{rpm}</span>
               </div>
             {/* ))} */}
@@ -326,7 +326,7 @@ const groupedDataArray = Object.values(groupedData);
       <aside className="flex flex-row space-y-4 md:space-y-0 md:space-x-2 p-1 rounded-lg">
   <div className="flex-1 bg-gray-300 p-3 rounded-lg">
     <div className="flex justify-between items-center mb-4">
-      {['RPM'].map((param) => (
+      {['moisture'].map((param) => (
         <button
           key={param}
           className={`py-2 px-4 ml-1 rounded-lg ${selectedParameter === param ? 'bg-gray-600 text-white' : 'bg-gray-400 text-black'}`}
@@ -341,10 +341,10 @@ const groupedDataArray = Object.values(groupedData);
   <thead>
     <tr>
       <th className="px-4 py-2 border-b border-gray-300">Date</th>
-      <th className="px-4 py-2 border-b border-gray-300">Runtime</th>
-      <th className="px-4 py-2 border-b border-gray-300">Idel Time</th>
-      <th className="px-4 py-2 border-b border-gray-300">Total Time</th>
-      <th className="px-4 py-2 border-b border-gray-300">Total Rounds</th>
+      <th className="px-4 py-2 border-b border-gray-300">moisture</th>
+      <th className="px-4 py-2 border-b border-gray-300">temp</th>
+      <th className="px-4 py-2 border-b border-gray-300">humi</th>
+      <th className="px-4 py-2 border-b border-gray-300">vol (water) </th>
     </tr>
   </thead>
   <tbody>
@@ -364,13 +364,13 @@ const groupedDataArray = Object.values(groupedData);
 
   <div className="flex-1 bg-gray-300 p-3 rounded-lg">
     <div className="flex flex-col mb-4">
-        <label htmlFor="factoryDropdown" className="text-black text-lg mb-1 block">Factory Name</label>
+        <label htmlFor="factoryDropdown" className="text-black text-lg mb-1 block">farm Name</label>
         <select
           id="factoryDropdown"
           className="bg-gray-400 text-white py-3 px-3 rounded-lg hover:bg-gray-500"
           onChange={(e) => setSelectedFactory(e.target.value)}
         >
-          <option value="">Select Factory</option>
+          <option value="">Select Farm</option>
           {machineDetails['Factory Name'].map((factory, index) => (
             <option key={index} value={factory}>
               {factory}
@@ -378,7 +378,7 @@ const groupedDataArray = Object.values(groupedData);
           ))}
         </select>
       <div>
-        <label htmlFor="locationDropdown" className="text-black text-lg mb-1 block">Machine Location</label>
+        <label htmlFor="locationDropdown" className="text-black text-lg mb-1 block">Farm Location</label>
         <select
           id="locationDropdown"
           className="bg-gray-400 text-white py-3 px-3 rounded-lg hover:bg-gray-500"
@@ -393,13 +393,13 @@ const groupedDataArray = Object.values(groupedData);
         </select>
       </div>
       <div>
-        <label htmlFor="technologyDropdown" className="text-black text-lg mb-1 block">Technology</label>
+        <label htmlFor="technologyDropdown" className="text-black text-lg mb-1 block">crop</label>
         <select
           id="technologyDropdown"
           className="bg-gray-400 text-white py-3 px-3 rounded-lg hover:bg-gray-500"
           onChange={(e) => setSelectedTechnology(e.target.value)}
         >
-          <option value="">Select Technology</option>
+          <option value="">Select crop</option>
           {machineDetails['Technology'].map((tech, index) => (
             <option key={index} value={tech}>
               {tech}
